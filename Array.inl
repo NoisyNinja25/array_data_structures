@@ -36,7 +36,7 @@ template <typename T>
 Array<T>::Array(const Array & arr) {
     m_cur_size = arr.get_size();
     m_max_size = arr.get_max_size();
-    m_data = new char[m_cur_size];
+    m_data = new T[m_cur_size];
 
     for (int i = 0; i < m_cur_size; i++) {
         m_data[i] = arr.get_element(i);
@@ -177,7 +177,7 @@ const Array<T> Array<T>::operator = (const Array & rhs) {
     m_max_size = rhs.get_max_size();
 
     delete [] m_data;
-    m_data = new char[m_cur_size];
+    m_data = new T[m_cur_size];
 
     for (int i = 0; i < m_cur_size; i++) {
         m_data[i] = rhs.get_element(i);

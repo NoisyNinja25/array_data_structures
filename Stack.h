@@ -31,9 +31,6 @@ class Stack : public Array<T> {
         void clear();
 
 
-        void shrink();
-
-
         const Stack & operator = (const Stack & rhs);
 
     private:

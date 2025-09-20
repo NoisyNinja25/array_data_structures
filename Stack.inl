@@ -30,7 +30,7 @@ template <typename T>
 T Stack<T>::pop() {
 
     if (is_empty()) {
-        throw std::out_of_range("Womp");
+        throw std::out_of_range("Stack is empty");
     }
 
     T el = m_arr.get_element(m_top);
@@ -48,4 +48,15 @@ template <typename T>
 void Stack<T>::clear() {
     m_arr.resize(0);
     m_top = -1;
+}
+
+template <typename T>
+const Stack<T> & Stack<T>::operator = (const Stack & rhs) {
+
+    if (this != &rhs) {
+        m_arr = rhs.m_arr;
+        m_top = rhs.m_top;
+    }
+    return *this;
+
 }
