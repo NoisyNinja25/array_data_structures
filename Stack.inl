@@ -43,3 +43,9 @@ template <typename T>
 bool Stack<T>::is_empty() {
     return m_arr.get_size() == 0;
 }
+
+template <typename T>
+void Stack<T>::clear() {
+    m_arr.resize(0);
+    m_top = -1;
+}
