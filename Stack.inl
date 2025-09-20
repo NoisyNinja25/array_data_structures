@@ -28,9 +28,18 @@ void Stack<T>::push(T el) {
 
 template <typename T>
 T Stack<T>::pop() {
+
+    if (is_empty()) {
+        throw std::out_of_range("Womp");
+    }
+
     T el = m_arr.get_element(m_top);
     m_arr.resize(m_top);
     m_top--;
     return el;
 }
 
+template <typename T>
+bool Stack<T>::is_empty() {
+    return m_arr.get_size() == 0;
+}
