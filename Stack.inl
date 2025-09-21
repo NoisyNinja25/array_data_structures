@@ -8,7 +8,8 @@ Stack<T>::Stack() {
 
 template <typename T>
 Stack<T>::Stack(const Stack& stack) {
-    // do this later
+    m_top = stack.m_top;
+    m_arr = stack.m_arr;
 }
 
 
