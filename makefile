@@ -1,5 +1,5 @@
 build:
-	g++ Array.h Stack.h driver.cpp -o Composition
+	g++ Array.h Stack.h Queue.h driver.cpp -o Composition
 
 run: Array
 	./Array
