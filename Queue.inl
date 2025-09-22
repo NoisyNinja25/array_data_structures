@@ -35,3 +35,10 @@ template <typename T>
 bool Queue<T>::is_empty() {
     return m_front > m_rear;
 }
+
+template <typename T>
+void Queue<T>::clear() {
+    arr.resize(0);
+    m_front = -1;
+    m_rear = 0;
+}
