@@ -37,6 +37,9 @@ class Queue {
         */
         bool is_empty();
 
+        // return the number of elments in the queue
+        unsigned int get_size();
+
         /**
          * remove all elements from the queue
         */

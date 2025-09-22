@@ -37,8 +37,13 @@ bool Queue<T>::is_empty() {
 }
 
 template <typename T>
+unsigned int Queue<T>::get_size() {
+    return (m_rear + 1) - m_front;
+}
+
+template <typename T>
 void Queue<T>::clear() {
-    arr.resize(0);
+    m_arr.resize(0);
     m_front = -1;
     m_rear = 0;
 }
