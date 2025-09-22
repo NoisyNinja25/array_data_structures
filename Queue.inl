@@ -1,4 +1,5 @@
 #include "Queue.h"
+#include <stdexcept>
 
 template <typename T>
 Queue<T>::Queue() {
@@ -20,7 +21,17 @@ void Queue<T>::enqueue(T el) {
 
 template <typename T>
 T Queue<T>::dequeue() {
+
+    if (is_empty()) {
+        throw std::out_of_range("Queue is empty");
+    }
+
     T element = m_arr.get_element(m_front);
     m_front++;
     return element;
+}
+
+template <typename T>
+bool Queue<T>::is_empty() {
+    return m_front > m_rear;
 }

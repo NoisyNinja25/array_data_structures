@@ -21,6 +21,8 @@ class Queue {
 
         T dequeue();
 
+        bool is_empty();
+
 
     private:
         Array<T> m_arr;
