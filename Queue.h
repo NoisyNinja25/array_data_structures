@@ -50,7 +50,12 @@ class Queue {
         Array<T> m_arr;
         int m_front;
         int m_rear;
-        
+
+        /**
+         * reset the allocation, shifting all elements back
+         * to the start of a newly generated array
+        */
+        void shift_to_start_();  
 
 };
 

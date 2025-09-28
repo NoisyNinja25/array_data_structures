@@ -16,7 +16,7 @@ Array<T>::Array(unsigned int length) {
     m_cur_size = length;
     m_max_size = length;
     
-    m_data = new char[length];
+    m_data = new T[length];
 }
 
 
@@ -122,7 +122,7 @@ void Array<T>::reverse() {
     unsigned int tail = m_cur_size - 1;
 
     while (head < mid) {
-        char temp = m_data[tail];
+        T temp = m_data[tail];
         m_data[tail] = m_data[head];
         m_data[head] = temp;
 
@@ -151,7 +151,7 @@ Array<T> Array<T>::slice(unsigned int begin, unsigned int end) const {
     Array arr = Array(length);
 
     for (int i = 0; i < length; i++) {
-        char el = m_data[begin + i];
+        T el = m_data[begin + i];
         arr.set_element(i, el);
     } 
 

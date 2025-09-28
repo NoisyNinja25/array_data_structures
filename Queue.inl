@@ -1,6 +1,8 @@
 #include "Queue.h"
 #include <stdexcept>
 
+#define MAX_MARGIN 5
+
 template <typename T>
 Queue<T>::Queue() {
     m_front = 0;
@@ -28,6 +30,11 @@ T Queue<T>::dequeue() {
 
     T element = m_arr.get_element(m_front);
     m_front++;
+
+    if (m_front > MAX_MARGIN) {
+        shift_to_start_();
+    }
+
     return element;
 }
 
@@ -46,4 +53,17 @@ void Queue<T>::clear() {
     m_arr.resize(0);
     m_front = -1;
     m_rear = 0;
+}
+
+template <typename T>
+void Queue<T>::shift_to_start_() {
+    Array temp = Array<T>(get_size());
+
+    for (int i = 0; i < get_size(); i++) {
+        temp[i] = m_arr.get_element(m_front + i);
+    }
+    m_arr = temp;
+
+    m_front = 0;
+    m_rear = m_arr.get_size() - 1;
 }
